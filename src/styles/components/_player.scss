@@ -1,0 +1,29 @@
+.player__content {
+    height: 95%;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+.player__title {
+    background-color: $secondary;
+    border-radius: 15px;
+    font-size: 30px;
+    max-width: 100%;
+    padding: 15px 25px;
+    text-align: center;
+    width: 70%;
+}
+
+.bhdLno {
+    height: 350px !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    width: 350px !important;
+}
+
+.player__pregunta {
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}

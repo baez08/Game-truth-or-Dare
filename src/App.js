@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useReducer } from 'react';
+import AppRouter from './routers/AppRouter';
+import { PlayerContext } from './player/PlayerContext';
+import { playerReducer } from './player/playerReducer';
 
-function App() {
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap';
+import 'animate.css';
+import './styles/styles.scss';
+
+
+const init = () => {
+  return JSON.parse(localStorage.getItem('player')) || [];
+}
+
+const App = () => {
+
+  const [player, dispatch] = useReducer(playerReducer, [], init);
+
+  useEffect(() => {
+    localStorage.setItem( 'player', JSON.stringify(player) );
+  }, [player])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <PlayerContext.Provider value={{
+      player,
+      dispatch
+    }}>
+      <AppRouter/>
+    </PlayerContext.Provider>
+  )
 }
 
 export default App;
