@@ -36,7 +36,7 @@ const QuestionsPlayer = ({show, setShow, player}) => {
         <>
             <Modal className="" show={show} centered >
                 <Modal.Header className="d-flex justify-content-center">
-                    <Modal.Title>¿Choose {player} truth or dare?</Modal.Title>
+                    <Modal.Title>{player} choose  ¿truth or dare?</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="d-flex justify-content-center align-items-center">
